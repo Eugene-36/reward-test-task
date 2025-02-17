@@ -1,0 +1,228 @@
+.header-container {
+  padding: 24px 20px 35px 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header-right {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    @include preTablet {
+      display: none;
+    }
+  }
+}
+.tick,
+.email,
+.headphones {
+  width: 20px;
+  height: 18px;
+  transition: var(--transition-effect);
+  &:hover,
+  &:active {
+    fill: var(--header-link);
+  }
+}
+.tick {
+  height: 15px;
+}
+.header {
+  z-index: 1001;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  position: fixed;
+  text-align: center;
+
+  .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__reward {
+    display: flex;
+    align-items: baseline;
+  }
+  &__placment {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header__logo {
+    cursor: pointer;
+    span {
+      color: var(--black-color);
+      text-transform: uppercase;
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    img {
+      width: 99px;
+      height: 52px;
+    }
+  }
+
+  .flex-block {
+    padding: 40px 22px 5px;
+    @include preTablet {
+      margin: 40px 0 0 0;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      min-height: 100vh;
+      width: 100%;
+      background: var(--nav-bar);
+      padding: 130px 22px 32px;
+      transition: var(--transition-effect);
+    }
+
+    ul {
+      display: flex;
+      gap: 20px 60px;
+      flex-flow: wrap;
+      align-items: end;
+      text-align: center;
+
+      @include preTablet {
+        align-items: end;
+        color: var(--white-color);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      .header__link {
+        color: var(--header-link);
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+
+        @include preTablet {
+          font-size: 15px;
+        }
+      }
+      .header__arrow {
+        display: flex;
+        align-items: center;
+        svg {
+          margin: 0 0 0 5px;
+        }
+      }
+
+      li {
+        cursor: pointer;
+        transition: var(--transition-effect);
+        &:hover,
+        &:active {
+          box-shadow: inset 0 -2px 0 0 var(--nav-hover-effect);
+        }
+        a.active {
+          box-shadow: inset 0 -2px 0 0 var(--nav-hover-effect);
+        }
+      }
+      .header__link {
+        text-align: center;
+      }
+      .header__button {
+        width: 200px;
+        height: 60px;
+        font-weight: 500;
+
+        @include mainButtonStyle;
+      }
+    }
+  }
+
+  .flex-block {
+    &.active {
+      right: 0;
+      z-index: 5;
+    }
+  }
+  .burger {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    width: 17px;
+    height: 14px;
+    margin-left: 12px;
+
+    div {
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      left: 0;
+      background: var(--burger-color);
+      border-radius: 1px;
+      transition: var(--transition-effect);
+    }
+    div:nth-child(1) {
+      top: 0;
+    }
+    div:nth-child(2) {
+      top: 6px;
+    }
+    div:nth-child(3) {
+      top: 12px;
+    }
+
+    &.active div:nth-child(1) {
+      background: var(--white-color);
+      top: 6px;
+      transform: rotate(45deg);
+    }
+    &.active div:nth-child(2) {
+      background: var(--burger-color);
+      display: none;
+    }
+    &.active div:nth-child(3) {
+      background: var(--white-color);
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+  }
+  .burger {
+    display: none;
+  }
+  @include preTablet {
+    .burger {
+      display: block;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      z-index: 6;
+    }
+  }
+  @include preTablet {
+    .flex-block {
+      align-items: flex-start;
+      background: var(--nav-bar);
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 130px 22px 32px;
+      position: fixed;
+      right: -100%;
+      top: -40px;
+      transition: var(--transition-effect);
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}

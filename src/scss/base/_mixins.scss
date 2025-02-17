@@ -1,0 +1,44 @@
+@mixin tablet() {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin preTablet() {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+// REUSABLE STYLES
+@mixin mainButtonStyle {
+  cursor: pointer;
+  border-radius: 1px 0px 0px 0px;
+  border: 1px solid var(--border-style);
+  background: var(--bg-btn-style);
+  padding: 3px 9px 5px 12px;
+  margin: 0 14px 0 0;
+  color: var(--btn-form-color);
+
+  text-align: center;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin titleBasicStyle {
+  color: var(--personal-title);
+  text-transform: uppercase;
+  margin: 0 0 7px 0;
+  font-size: 13px;
+  font-style: normal;
+  line-height: normal;
+  font-weight: 600;
+}
