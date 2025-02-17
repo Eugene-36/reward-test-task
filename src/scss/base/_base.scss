@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
   background: var(--white-color) url('../../img/main-photo.png') no-repeat right
     top;
-  background-size: 60%;
+  background-size: 40%;
 
   @include preTablet {
     background-size: 100%;
