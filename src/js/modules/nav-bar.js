@@ -1,7 +1,6 @@
 const HEADER_NAV_ID = 'header-nav';
 const BURGER_ID = 'burger';
 const ACTIVE_CLASS = 'active';
-console.log('work fine');
 
 const HEADER_NAV_WRAPPER_SELECTOR = '.header-nav-wrapper';
 
