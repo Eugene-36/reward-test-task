@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-
+const ghPages = require('gulp-gh-pages');
 // Tasks
 require('./gulp/dev.js');
 require('./gulp/docs.js');
@@ -39,14 +39,22 @@ gulp.task(
     gulp.parallel('server:docs')
   )
 );
-// Deploy task
-gulp.task('deploy', function (done) {
-  ghPages.publish(path.join(__dirname, 'build'), function (err) {
-    if (err) {
-      console.error('Error deploying:', err);
-    } else {
-      console.log('Deployed successfully!');
-    }
-    done();
-  });
+
+gulp.task(
+  'build',
+  gulp.series(
+    'fontsDocs',
+    gulp.parallel(
+      'html:docs',
+      'sass:docs',
+      'images:docs',
+      gulp.series('svgStack:docs', 'svgSymbol:docs'),
+      'files:docs',
+      'js:docs'
+    )
+  )
+);
+//Deploy
+gulp.task('deploy', function () {
+  return gulp.src('./build/**/*').pipe(ghPages());
 });
