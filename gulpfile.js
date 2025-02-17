@@ -39,3 +39,14 @@ gulp.task(
     gulp.parallel('server:docs')
   )
 );
+// Deploy task
+gulp.task('deploy', function (done) {
+  ghPages.publish(path.join(__dirname, 'build'), function (err) {
+    if (err) {
+      console.error('Error deploying:', err);
+    } else {
+      console.log('Deployed successfully!');
+    }
+    done();
+  });
+});
