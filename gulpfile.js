@@ -56,5 +56,5 @@ gulp.task(
 );
 //Deploy
 gulp.task('deploy', function () {
-  return gulp.src('./build/**/*').pipe(ghPages());
+  return gulp.src('./docs/**/*').pipe(ghPages());
 });

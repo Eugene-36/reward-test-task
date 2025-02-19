@@ -17,6 +17,9 @@
       @include preTablet {
         margin: 0 0 11px 0;
       }
+      @include mobile {
+        font-size: 12px;
+      }
     }
     @include preTablet {
       flex-direction: column;
@@ -61,12 +64,19 @@
       div:last-child {
         display: flex;
         flex-direction: column;
+        @include mobile {
+          align-items: end;
+        }
         .points {
           color: var(--white-color);
           font-size: 28px;
           font-style: normal;
           font-weight: 300;
           line-height: normal;
+          @include mobile {
+            font-size: 20px;
+            align-items: end;
+          }
         }
       }
       h3 {
@@ -75,6 +85,9 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @include mobile {
+          font-size: 10px;
+        }
       }
 
       span {
@@ -110,6 +123,9 @@
         font-size: 18px;
         font-weight: 400;
         text-transform: uppercase;
+        @include mobile {
+          font-size: 10px;
+        }
       }
 
       span {
@@ -181,6 +197,9 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    @include mobile {
+      font-size: 12px;
+    }
   }
   h3 {
     color: var(--recognize-sub-title);
@@ -201,6 +220,10 @@
 
     a {
       color: var(--recognize-link);
+      transition: var(--transition-effect);
+      &:hover {
+        box-shadow: inset 0 -2px 0 0 var(--nav-hover-effect);
+      }
     }
   }
   &__item {
@@ -268,6 +291,9 @@
   margin: 0 0 21px 0;
   &__title {
     @include titleBasicStyle;
+    @include mobile {
+      font-size: 10px;
+    }
   }
 
   &__letter {
@@ -287,6 +313,9 @@
   margin: 0 0 16px 0;
   &__heading {
     @include titleBasicStyle;
+    @include mobile {
+      font-size: 10px;
+    }
   }
   &__preview {
     margin: 0 13px 0 0;
@@ -353,7 +382,7 @@
     }
   }
   &__date {
-    color: var(--e-card-date);
+    color: var(--black-color);
     font-size: 8px;
     font-style: normal;
     font-weight: 600;
@@ -416,6 +445,9 @@
     @include tablet {
       margin: 14px 0 0 0;
     }
+    @include mobile {
+      font-size: 10px;
+    }
   }
   &__button {
     transition: var(--transition-effect);
@@ -425,6 +457,9 @@
     @include mainButtonStyle;
     @include tablet {
       margin: 0 0 14px 0;
+    }
+    @include mobile {
+      font-size: 10px;
     }
   }
   &__input {

@@ -7,7 +7,7 @@ function resizeMenu(h_hght, color) {
   }
 
   window.addEventListener('scroll', updateBackground);
-  updateBackground(); // Run initially to set background if needed
+  updateBackground();
 }
 
 export default resizeMenu;

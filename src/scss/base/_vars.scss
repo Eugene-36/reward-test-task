@@ -4,7 +4,6 @@
 
   --transition-effect: 0.2s;
   --white-color: #fff;
-  --black-color: #000000;
   --text-color: #959ea8;
   --link-color: #969699;
   --logo-color: #919191;
@@ -12,6 +11,7 @@
   --header-link: lightcoral;
   --nav-bar: #1e1e1e;
   --burger-color: #000;
+  --black-color: #000000;
   --nav-hover-effect: #d10101;
   --points-color: #c0bfc0;
   --sub-points: #96908d;
@@ -19,9 +19,6 @@
   --member-border: #bacfdd;
   --letter-tex: #959ea8;
   --letter-bg: lightgray;
-  --e-card-heading: #878787;
-  --e-card-text: #b1cbd8;
-  --e-card-date: #8ba5b2;
   --copy-input: #f6f6f6;
   --copy-input-bg: #fefefe;
   --hover-shadow: 10px 10px 10px rgba(36, 36, 36, 0.5);
@@ -35,7 +32,7 @@
 
   //Recognize style
   --recognize-text: #979797;
-  --recognize-link: #e4d8c3;
+  --recognize-link: lightcoral;
   --recognize-item-bg: lightgray;
 
   //Button style
@@ -45,12 +42,17 @@
 
   //Title colors
   --title-color: #232323;
-  --sub-title: #c4c4c4;
+  --sub-title: var(--black-color);
   --aside-sub-title: #bbbaba;
   --member-title: #e3f1f4;
   --member-sub-title: #d4e6ee;
-  --recognize-title: #a0a4a6;
+  --recognize-title: var(--black-color);
   --recognize-sub-title: #e2d3ba;
-  --personal-title: #8e8e8e;
-  --e-card-sub-title: #89a3b0;
+  --personal-title: var(--black-color);
+
+  // E-card vars
+  --e-card-heading: #878787;
+  --e-card-text: #b1cbd8;
+  --e-card-date: #8ba5b2;
+  --e-card-sub-title: var(--black-color);
 }
